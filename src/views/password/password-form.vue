@@ -95,7 +95,9 @@
       </router-link>
     </div>
     <div class="column is-2">
-      <button class="button is-fullwidth is-info " @click="onClickEditar()">Salvar as Alterações</button>
+      <router-link to="/password/listar">
+      <button class="button is-fullwidth is-info " @click="onClickEditar()">Salvar as Alterações</button>      </router-link>
+
     </div>
     <div class="column is-2">
       <button class="button is-fullwidth is-danger" @click="onClickExcluir()">Excluir</button>

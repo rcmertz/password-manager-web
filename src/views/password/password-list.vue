@@ -23,29 +23,29 @@
 
   <table class="table">
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Login</th>
-      <th>Senha</th>
-      <th>Descrição</th>
-      <th>Url</th>
-      <th>Opções</th>
-    </tr>
+      <tr>
+        <th>ID</th>
+        <th>Login</th>
+        <th>Senha</th>
+        <th>Descrição</th>
+        <th>Url</th>
+        <th>Opções</th>
+      </tr>
     </thead>
 
     <tbody>
-    <tr v-for="item in passwordsList" :key="item.id">
-      <th>{{ item.id }}</th>
-      <th>{{ item.login }}</th>
-      <th>{{ item.password }}</th>
-      <th>{{ item.descricao }}</th>
-      <th>{{ item.url }}</th>
-      <th>
-        <button @click="onClickPaginaDetalhar(item.id)" class="button is-small is-info is-outlined">
-          Detalhar
-        </button>
-      </th>
-    </tr>
+      <tr v-for="item in passwordsList" :key="item.id">
+        <th>{{ item.id }}</th>
+        <th>{{ item.login }}</th>
+        <th>{{ item.password }}</th>
+        <th>{{ item.descricao }}</th>
+        <th>{{ item.url }}</th>
+        <th>
+          <button @click="onClickPaginaDetalhar(item.id)" class="button is-small is-info is-outlined">
+            Detalhar
+          </button>
+        </th>
+      </tr>
     </tbody>
   </table>
 
@@ -72,14 +72,13 @@ export default class PasswordList extends Vue {
     this.listarPasswords()
   }
   private listarPasswords(): void {
-    this.passwordClient.findByFiltrosPaginado(this.pageRequest)
-        .then(
-            success => {
-              this.pageResponse = success
-              this.passwordsList = this.pageResponse.content
-            },
-            error => console.log(error)
-        )
+    this.passwordClient.listar()
+      .then(
+        async success => {
+          this.passwordsList = await success
+        },
+        error => console.log(error)
+      )
   }
   onClickPaginaDetalhar(idPassword: number) {
     this.$router.push({ name: 'password-detalhar', params: { id: idPassword, model: 'detalhar' } })

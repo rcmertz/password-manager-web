@@ -14,7 +14,6 @@ export class PasswordClient {
             headers: { 'Content-type': 'application/json' }
         });
     }
-
     public async findById(id: number): Promise<Password> {
         try {
             return (await this.axiosClient.get<Password>(`/${id}`)).data
@@ -50,6 +49,14 @@ export class PasswordClient {
         }
     }
 
+    public async listar(): Promise<Password[]> {
+        try{
+            return(await this.axiosClient.get('/')).data
+        } catch(error:any){
+            return Promise.reject(error.response)
+        }
+    }
+
     public async editar(password: Password): Promise<void> {
         try {
             return (await this.axiosClient.put(`/${password.id}`, password)).data
@@ -68,7 +75,7 @@ export class PasswordClient {
 
     public async excluir(password: Password): Promise<void> {
         try {
-            return (await this.axiosClient.delete(`/delete/${password.id}`, password)).data
+            return (await this.axiosClient.delete(`/${password.id}`, password)).data
         } catch (error: any) {
             return Promise.reject(error.response)
         }
