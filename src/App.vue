@@ -6,7 +6,7 @@
   </div>
 
   <div class="columns">
-    <div class="column is-3">
+    <!-- <div class="column is-3">
       <nav>
         <aside class="menu">
           <p class="menu-label"> Menu </p>
@@ -15,7 +15,7 @@
           </ul>
         </aside>
       </nav>
-    </div>
+    </div> -->
     <div class="column is-9 conteudo">
       <router-view> </router-view>
     </div>
@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss">
-  @import "~bulma/bulma.sass";
+@import "~bulma/bulma.sass";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -49,7 +49,7 @@ nav {
   margin-top: 30px;
 }
 
-.menu-top{
+.menu-top {
   background: hsl(0, 0%, 29%);
   padding: 15px;
   color: white;
