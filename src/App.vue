@@ -6,16 +6,6 @@
   </div>
 
   <div class="columns">
-    <!-- <div class="column is-3">
-      <nav>
-        <aside class="menu">
-          <p class="menu-label"> Menu </p>
-          <ul class="menu-list">
-            <li><router-link to="/password/listar">Passwords</router-link></li>
-          </ul>
-        </aside>
-      </nav>
-    </div> -->
     <div class="column is-9 conteudo">
       <router-view> </router-view>
     </div>

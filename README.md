@@ -1,4 +1,4 @@
-# consultorio-client
+# password-manager
 
 ## Project setup
 ```
