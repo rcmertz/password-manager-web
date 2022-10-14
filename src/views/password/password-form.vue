@@ -13,22 +13,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="columns" v-if="visualizar === 'detalhar'">
-    <div class="column is-12 is-size-3">
-      <label class="label">
-        <input v-model="password.ativo" disabled checked type="checkbox">
-        Ativar Senha
-      </label>
-    </div>
-  </div>
-  <div class="columns" v-else>
-    <div class="column is-12 is-size-3">
-      <label class="label">
-        <input v-model="password.ativo" checked type="checkbox">
-        Ativar Senha
-      </label>
-    </div>
-  </div> -->
 
   <div class="columns">
     <div class="column is-12 is-size-3">
@@ -104,7 +88,7 @@
     </div>
   </div>
 
-  <div class="columns" v-if="visualizar === 'cadastrar'">
+  <div class="columns" v-if="visualizar === 'Cadastrar'">
     <div class="column is-8"></div>
     <div class="column is-2">
       <router-link to="/password/listar">
@@ -172,7 +156,7 @@ export default class PasswordForm extends Vue {
         console.log(this.notification)
       })
     } else {
-      this.visualizar = 'cadastrar'
+      this.visualizar = 'Cadastrar'
     }
   }
 

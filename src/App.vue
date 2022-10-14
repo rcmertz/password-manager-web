@@ -5,11 +5,13 @@
     </div>
   </div>
 
+  <div class="container">
   <div class="columns">
-    <div class="column is-9 conteudo">
+    <div class="column is-12 conteudo">
       <router-view> </router-view>
     </div>
   </div>
+</div>
 </template>
 
 <style lang="scss">
